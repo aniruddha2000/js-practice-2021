@@ -19,6 +19,7 @@ const courses = [
 
 function generateList() {
   const ul = document.querySelector(".list-group");
+  ul.innerHTML = "";
   courses.forEach((course) => {
     const li = document.createElement("li");
     li.classList.add("list-group-items");
@@ -33,4 +34,22 @@ function generateList() {
   });
 }
 
-generateList();
+window.addEventListener("load", generateList);
+
+const sortButton = document.querySelector(".sort-btn");
+
+sortButton.addEventListener("click", () => {
+  courses.sort((a, b) => {
+    return a.price - b.price;
+  });
+  generateList();
+});
+
+const sortReverseButton = document.querySelector(".sort-reverse-btn");
+
+sortReverseButton.addEventListener("click", () => {
+  courses.sort((a, b) => {
+    return b.price - a.price;
+  });
+  generateList();
+});
