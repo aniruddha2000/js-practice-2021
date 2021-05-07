@@ -53,3 +53,23 @@ sortReverseButton.addEventListener("click", () => {
   });
   generateList();
 });
+
+const alphaSortButton = document.querySelector(".alpha-sort-btn");
+
+alphaSortButton.addEventListener("click", () => {
+  courses.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  });
+  generateList();
+});
+
+const alphasortReverseButton = document.querySelector(
+  ".alpha-sort-reverse-btn"
+);
+
+alphasortReverseButton.addEventListener("click", () => {
+  courses.sort((a, b) => {
+    return b.name.localeCompare(a.name);
+  });
+  generateList();
+});
