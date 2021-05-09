@@ -18,8 +18,11 @@
 function sayMyName(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
-  console.log(`${this.firstName} ${this.lastName}`);
+  return `${this.firstName} ${this.lastName}`;
 }
 
 let ani = new sayMyName("Aniruddha", "Basak");
 let anu = new sayMyName("Anumita", "Basak");
+
+console.log(ani);
+console.log(anu);
