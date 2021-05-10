@@ -3,7 +3,7 @@ class User {
     this.name = name;
     this.email = email;
   }
-  knowLanguages = [];
+  #knowLanguages = [];
 
   getData() {
     return {
@@ -14,13 +14,26 @@ class User {
 
   addLanguage(...languages) {
     for (const language of languages) {
-      this.knowLanguages.push(language);
+      this.#knowLanguages.push(language);
     }
   }
 
   getKnownLanguages() {
-    return this.knowLanguages;
+    return this.#knowLanguages;
   }
 }
+
+class Admin extends User {
+  constructor(name, email) {
+    super(name, email);
+  }
+  getAdminInfo() {
+    return "Hey, there! I am now Admin";
+  }
+}
+
+anumita = new Admin("Anumita Basak", "basakanumita@gmail.com");
+console.log(anumita.getAdminInfo());
+console.log(anumita.getData());
 
 module.exports = User;
