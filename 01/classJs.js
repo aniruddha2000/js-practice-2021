@@ -4,7 +4,6 @@ class User {
     this.email = email;
   }
   #knowLanguages = [];
-
   getData() {
     return {
       name: this.name,
@@ -12,7 +11,7 @@ class User {
     };
   }
 
-  addLanguage(...languages) {
+  addLanguage(...languages) { // ... is spread
     for (const language of languages) {
       this.#knowLanguages.push(language);
     }
